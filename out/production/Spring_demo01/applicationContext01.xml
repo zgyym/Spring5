@@ -9,6 +9,9 @@
     <bean id="book" class="com.pojo.Book">
         <property name="bname" value="易筋经"></property>
         <property name="bauthor" value="达摩老祖"></property>
+        <property name="address">
+            <value><![CDATA[<<南京>>]]></value>
+        </property>
     </bean>
 
    <!-- <bean id="book" class="com.pojo.Book">
@@ -39,5 +42,5 @@
     <bean id="orders" class="com.pojo.Orders">
             <constructor-arg name="oname" value="电脑"></constructor-arg>
             <constructor-arg name="address" value="China"></constructor-arg>
-        </bean>
+    </bean>
 </beans>

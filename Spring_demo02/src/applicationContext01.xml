@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="student" class="com.collectiontype.Student">
+        <property name="courses">
+            <array>
+                <value>java</value>
+                <value>spring</value>
+            </array>
+        </property>
+
+        <property name="list">
+            <list>
+                <value>言魔</value>
+                <value>yanmo</value>
+            </list>
+        </property>
+
+        <property name="map">
+            <map>
+                <entry key="JAVA" value="java"></entry>
+                <entry key="PHP" value="php"></entry>
+            </map>
+        </property>
+
+        <property name="set">
+            <set>
+                <value>Mysql</value>
+                <value>Redis</value>
+            </set>
+        </property>
+
+        <property name="courseList">
+            <list>
+                <ref bean="course1"></ref>
+                <ref bean="course2"></ref>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="course1" class="com.collectiontype.Course">
+        <property name="name" value="Spring5 框架"></property>
+    </bean>
+
+    <bean id="course2" class="com.collectiontype.Course">
+        <property name="name" value="MyBatis 框架"></property>
+    </bean>
+
+</beans>

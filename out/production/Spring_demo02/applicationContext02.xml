@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <!-- 提取 list 集合类型属性注入 -->
+    <util:list id="bookList">
+        <!-- 对象属性：<ref bean="???"></ref> -->
+        <value>易筋经</value>
+        <value>九阴真经</value>
+    </util:list>
+
+    <!--2 提取出的 list 集合类型属性的注入使用-->
+    <bean id="book" class="com.collectiontype.Book">
+        <property name="list" ref="bookList"></property>
+    </bean>
+
+</beans>
