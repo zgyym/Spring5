@@ -13,7 +13,7 @@
     </util:list>
 
     <!--2 提取出的 list 集合类型属性的注入使用-->
-    <bean id="book" class="com.collectiontype.Book">
+    <bean id="book" class="com.collectiontype.Book" scope="prototype">
         <property name="list" ref="bookList"></property>
     </bean>
 

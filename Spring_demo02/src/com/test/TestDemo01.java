@@ -1,5 +1,8 @@
 package com.test;
 
+import com.alibaba.druid.pool.DruidDataSource;
+import com.autowire.Emp;
+import com.bean.Order;
 import com.collectiontype.Book;
 import com.collectiontype.Course;
 import com.collectiontype.Student;
@@ -18,8 +21,10 @@ public class TestDemo01 {
     @Test
     public void testDemo02(){
         ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext02.xml");
-        Book book = context.getBean("book", Book.class);
-        book.test();
+        Book book1 = context.getBean("book", Book.class);
+        Book book2 = context.getBean("book", Book.class);
+        System.out.println(book1);
+        System.out.println(book2);
     }
 
     @Test
@@ -29,4 +34,32 @@ public class TestDemo01 {
         System.out.println(myBean);
     }
 
+    @Test
+    public void testBean(){
+        ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext04.xml");
+        Order order = context.getBean("order", Order.class);
+        System.out.println("第四步：获取创建bean实例对象");
+        System.out.println(order);
+
+        //ApplicationContext中没有close方法
+        ((ClassPathXmlApplicationContext)context).close();
+    }
+
+
+    @Test
+    public void testBean2(){
+        ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext05.xml");
+        Emp emp = context.getBean("emp", Emp.class);
+        System.out.println(emp);
+
+    }
+
+
+    @Test
+    public void testBean3(){
+        ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext06.xml");
+        DruidDataSource dataSourse = context.getBean("dataSourse", DruidDataSource.class);
+        System.out.println(dataSourse);
+
+    }
 }

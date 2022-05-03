@@ -5,16 +5,13 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
                            http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
 
-    <!-- 提取 list 集合类型属性注入 -->
-    <util:list id="bookList">
-        <!-- 对象属性：<ref bean="???"></ref> -->
-        <value>易筋经</value>
-        <value>九阴真经</value>
-    </util:list>
+   <bean id="order" class="com.bean.Order" init-method="init" destroy-method="destory">
+      <property name="name" value="Java核心基础卷"></property>
+   </bean>
 
-    <!--2 提取出的 list 集合类型属性的注入使用-->
-    <bean id="book" class="com.collectiontype.Book" scope="prototype">
-        <property name="list" ref="bookList"></property>
-    </bean>
+   <!-- bean的后置处理器配置 -->
+   <!--BeanPost类实现了BeanPostProcessor接口，Spring可以将其自动识别为后置处理器-->
+   <!--这样配置后置处理器后，该配置文件中的所有bean都添加后置处理器的处理-->
+   <bean id="beanPost" class="com.bean.BeanPost"></bean>
 
 </beans>
