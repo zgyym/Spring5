@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="lib_AspectJ">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/lib_AspectJ" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="file://$PROJECT_DIR$/lib_AspectJ" recursive="false" />
+  </library>
+</component>
